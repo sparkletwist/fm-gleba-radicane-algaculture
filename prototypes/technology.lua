@@ -19,7 +19,7 @@ data:extend({
 		icon = "__gleba-radicane-algaculture__/graphics/technology/water-cane-mutation.png",
 		icon_size = 256,
 		effects = {
-			{type="unlock-recipe", recipe="water-cane-mutation"},
+			{type="unlock-recipe", recipe="radicane-seed"},
 			{type="unlock-recipe", recipe="overgrowth-radicane-swamp"}
 		},
 		prerequisites = {"water-cane", "tree-seeding", "uranium-processing"},
@@ -42,7 +42,8 @@ data:extend({
 		icon_size = 256,
 		effects = {
 			{type="unlock-recipe", recipe="radicane-processing"},
-			{type="unlock-recipe", recipe="radicane-decontamination"}
+			{type="unlock-recipe", recipe="radicane-decontamination"},
+			{type="unlock-recipe", recipe="pentapod-irradiation"}
 		},
 		prerequisites = {"water-cane-mutation"},
 		research_trigger = {

@@ -1,4 +1,5 @@
 local frep = require("__fdsl__.lib.recipe")
+local ftech = require("__fdsl__.lib.technology")
 
 if mods["astroponics"] then
 	frep.add_ingredient("water-cane-mutation", {type="fluid", name="liquid-fertilizer", amount=250})
@@ -16,6 +17,8 @@ if mods["astroponics"] then
 			category = "astroponics",
 			subgroup = "astroponics-processes",
 			order = "b[agriculture]-b[radicane]"
-		}
+		},
 	})
+
+	ftech.add_unlock("radicane", "radicane-astroponics")
 end
