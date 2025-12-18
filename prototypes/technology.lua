@@ -4,6 +4,7 @@ data:extend({
 		name = "water-cane",
 		icon = "__gleba-radicane-algaculture__/graphics/technology/water-cane.png",
 		icon_size = 256,
+		prerequisites = {"agriculture"},
 		effects = {
 			{type="unlock-recipe", recipe="water-cane-processing"}
 		},
@@ -21,7 +22,7 @@ data:extend({
 			{type="unlock-recipe", recipe="water-cane-mutation"},
 			{type="unlock-recipe", recipe="overgrowth-radicane-swamp"}
 		},
-		prerequisites = {"tree-seeding", "uranium-processing"},
+		prerequisites = {"water-cane", "tree-seeding", "uranium-processing"},
 		unit = {
 			count = 60,
 			ingredients = {

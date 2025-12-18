@@ -36,7 +36,7 @@ data:extend({
 		},
 		results = {
 			{type="item", name="radicane-seed", amount=1, probability=0.913},
-			{type="item", name="uranium-238", amount=1, ignored_by_stats=1},
+			{type="item", name="uranium-238", amount=1, ignored_by_stats=1, ignored_by_productivity=1},
 			{type="item", name="spoilage", amount=1, probability=0.087}
 		}
 	},
@@ -57,7 +57,7 @@ data:extend({
 		ingredients = {
 			{type="item", name="landfill", amount=5},
 			{type="item", name="nutrients", amount=50},
-			{type="fluid", name="water", amount=1000}
+			{type="fluid", name="water", amount=500}
 		},
 		results = {{type="item", name="artificial-swamp", amount=10}}
 	},
@@ -77,8 +77,8 @@ data:extend({
 		energy_required = 10,
 		ingredients = {
 			{type="item", name="artificial-swamp", amount=2},
-			{type="item", name="water-cane", amount=5},
-			{type="item", name="uranium-235", amount=1},
+			{type="item", name="pentapod-egg", amount=5},
+			{type="item", name="uranium-ore", amount=10},
 			{type="item", name="spoilage", amount=50},
 			{type="fluid", name="petroleum-gas", amount=100}
 		},
@@ -122,6 +122,56 @@ data:extend({
 		results = {
 			{type="item", name="water-cane", amount=1},
 			{type="item", name="uranium-ore", amount=4}
+		}
+	},
+	{
+		type = "recipe",
+		name = "fish-irradiation",
+		icon = "__gleba-radicane-algaculture__/graphics/icons/fish-irradiation.png",
+		category = "organic",
+		subgroup = "nauvis-agriculture",
+		order = "b[nauvis-agriculture]-d[fish-irradiation]",
+		enabled = false,
+		allow_productivity = true,
+		allow_quality = true,
+		energy_required = 3,
+		ingredients = {
+			{type="item", name="fish", amount=1, ignored_by_stats=1},
+			{type="item", name="radicane", amount=2},
+			{type="fluid", name="water", amount=60}
+		},
+		results = {
+			{type="item", name="fish", amount=4, percent_spoiled=0.5, ignored_by_stats=1, ignored_by_productivity=1},
+			{type="item", name="uranium-238", amount=1}
+		},
+		crafting_machine_tint = {
+			primary = {r = 45, g = 192, b = 86, a = 1.000},
+			secondary = {r = 75, g = 156, b = 122, a = 1.000},
+		}
+	},
+	{
+		type = "recipe",
+		name = "pentapod-irradiation",
+		icon = "__gleba-radicane-algaculture__/graphics/icons/pentapod-irradiation.png",
+		category = "organic",
+		subgroup = "agriculture-products",
+		order = "c[eggs]-b[pentapod-eggs]-b[irradiation]",
+		enabled = false,
+		allow_productivity = true,
+		allow_quality = true,
+		energy_required = 3,
+		ingredients = {
+			{type="item", name="pentapod-egg", amount=1, ignored_by_stats=1},
+			{type="item", name="radicane", amount=10},
+			{type="fluid", name="water", amount=30}
+		},
+		results = {
+			{type="item", name="pentapod-egg", amount=4, percent_spoiled=0.5, ignored_by_stats=1, ignored_by_productivity=1},
+			{type="item", name="uranium-235", amount=1}
+		},
+		crafting_machine_tint = {
+			primary = {r = 45, g = 192, b = 86, a = 1.000},
+			secondary = {r = 75, g = 156, b = 122, a = 1.000},
 		}
 	}
 })

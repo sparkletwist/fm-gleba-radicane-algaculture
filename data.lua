@@ -7,6 +7,6 @@ require("prototypes.particles")
 require("prototypes.recipe")
 require("prototypes.technology")
 
-require("prototypes.compat.astroponics")
-
 require("base-data-updates")
+
+require("prototypes.compat.astroponics")
