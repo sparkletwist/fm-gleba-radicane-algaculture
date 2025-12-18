@@ -1,0 +1,15 @@
+{
+  "name": "gleba-radicane-algaculture",
+  "title": "Radicane Algaculture",
+  "description": "",
+  "author": "SafTheLamb",
+  "version": "0.0.1",
+  "factorio_version": "2.0",
+  "homepage": "https://github.com/SafTheLamb/fm-gleba-radicane-algaculture",
+  "dependencies": [
+    "base >= 2.0.72",
+    "fdsl >= 0.2.4",
+    "space-age"
+  ],
+  "space_travel_required": true
+}
