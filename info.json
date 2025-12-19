@@ -9,7 +9,8 @@
   "dependencies": [
     "base >= 2.0.72",
     "fdsl >= 0.2.4",
-    "space-age"
+    "space-age",
+    "? astroponics"
   ],
   "space_travel_required": true
 }
