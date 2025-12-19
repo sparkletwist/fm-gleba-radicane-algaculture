@@ -57,6 +57,8 @@ local function gleba_tree_variations(name, variation_count, per_row, scale_multi
   for i = 1, variation_count do
     local x = ((i - 1) % per_row) * width
     local y = math.floor((i-1)/per_row) * height
+    local x2 = (i % per_row) * width
+    local y2 = math.floor(i / per_row) * height
     local variation = {
       trunk = {
         filename = "__gleba-radicane-algaculture__/graphics/entity/plant/"..name.."/"..name.."-trunk.png",
@@ -101,8 +103,8 @@ local function gleba_tree_variations(name, variation_count, per_row, scale_multi
         surface = "gleba",
         filenames =
         {
-          "__space-age__/graphics/entity/plant/water-cane/water-cane-harvest-shadow.png",
-          "__space-age__/graphics/entity/plant/water-cane/water-cane-shadow.png"
+          "__gleba-radicane-algaculture__/graphics/entity/plant/"..name.."/"..name.."-harvest-shadow.png",
+          "__gleba-radicane-algaculture__/graphics/entity/plant/"..name.."/"..name.."-shadow.png"
         },
         width = width,
         height = height,
@@ -116,7 +118,7 @@ local function gleba_tree_variations(name, variation_count, per_row, scale_multi
 
       water_reflection = {
         pictures = {
-        filename = "__space-age__/graphics/entity/plant/water-cane/water-cane-effect-map.png",
+        filename = "__gleba-radicane-algaculture__/graphics/entity/plant/"..name.."/"..name.."-effect-map.png",
         --flags = { "mipmap" },
         surface = "gleba",
         width = width,
@@ -221,7 +223,7 @@ data:extend({
 		impact_category = "tree",
 		autoplace = {
 			probability_expression = "0",
-			tile_restriction = {"wetland-light-green-slime", "artificial-swamp"}
+			tile_restriction = {"wetland-green-slime", "wetland-light-green-slime", "artificial-swamp", "overgrowth-radicane-swamp"}
 		},
 		variations = data.raw.tree["water-cane"].variations,
 		colors = minor_tints(),
@@ -264,7 +266,7 @@ data:extend({
 		impact_category = "tree",
 		autoplace = {
 			probability_expression = "0",
-			tile_restriction = {"overgrowth-radicane-swamp"}
+			tile_restriction = {"wetland-green-slime", "wetland-light-green-slime", "artificial-swamp", "overgrowth-radicane-swamp"}
 		},
 		variations = gleba_tree_variations("radicane", 16, 3, 1, 340, 290, util.by_pixel(30, -28), util.by_pixel(30, -20)),
 		colors = minor_tints(),

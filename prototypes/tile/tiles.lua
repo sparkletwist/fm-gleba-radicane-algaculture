@@ -6,6 +6,8 @@ local base_sounds = require("__base__/prototypes/entity/sounds")
 local base_tile_sounds = require("__base__/prototypes/tile/tile-sounds")
 local tile_sounds = require("__space-age__/prototypes/tile/tile-sounds")
 
+local lava_to_out_of_map_transition = space_age_tiles_util.lava_to_out_of_map_transition
+
 data:extend({
 	{
 		type = "tile",
@@ -25,15 +27,15 @@ data:extend({
 		layer_group = "water-overlay",
 		searchable = true,
 
-		transitions = data.raw["tile"]["landfill"].transitions,
-		transitions_between_transitions = data.raw["tile"]["landfill"].transitions_between_transitions,
-    	trigger_effect = tile_trigger_effects.landfill_trigger_effect(),
+		-- transitions = data.raw["tile"]["landfill"].transitions,
+		-- transitions_between_transitions = data.raw["tile"]["landfill"].transitions_between_transitions,
+    	-- trigger_effect = tile_trigger_effects.landfill_trigger_effect(),
 
 		sprite_usage_surface = "gleba",
 		variants = {
 			main = {
 				{
-					picture = "__space-age__/graphics/terrain/gleba/wetland-green-slime.png",
+					picture = "__gleba-radicane-algaculture__/graphics/terrain/artificial-swamp.png",
 					count = 1,
 					scale = 0.5,
 					size = 1
@@ -41,8 +43,10 @@ data:extend({
 			},
 			transition = tile_graphics.generic_masked_tile_transitions1
 		},
-		-- transitions = {lava_to_out_of_map_transition},
-		-- transitions_between_transitions = data.raw.tile["water"].transitions_between_transitions,
+		transitions = {lava_to_out_of_map_transition},
+		transitions_between_transitions = data.raw.tile["water"].transitions_between_transitions,
+		trigger_effect = tile_trigger_effects.shallow_water_trigger_effect(),
+
 		walking_sound = tile_sounds.walking.slime,
 		landing_steps_sound = tile_sounds.landing.semi_wet,
 		driving_sound = tile_sounds.driving.wetland,
@@ -52,7 +56,6 @@ data:extend({
 		},
 		walking_speed_modifier = 0.8,
 		vehicle_friction_modifier = 8.0,
-		-- trigger_effect = tile_trigger_effects.shallow_water_trigger_effect(),
 		default_cover_tile = "landfill",
 		fluid = "water",
 		absorptions_per_second = tile_pollution.gleba_water,
@@ -75,15 +78,15 @@ data:extend({
 		layer_group = "water-overlay",
 		searchable = true,
 
-		transitions = data.raw["tile"]["landfill"].transitions,
-		transitions_between_transitions = data.raw["tile"]["landfill"].transitions_between_transitions,
-    	trigger_effect = tile_trigger_effects.landfill_trigger_effect(),
+		-- transitions = data.raw["tile"]["landfill"].transitions,
+		-- transitions_between_transitions = data.raw["tile"]["landfill"].transitions_between_transitions,
+    	-- trigger_effect = tile_trigger_effects.landfill_trigger_effect(),
 
 		sprite_usage_surface = "gleba",
 		variants = {
 			main = {
 				{
-					picture = "__space-age__/graphics/terrain/gleba/wetland-green-slime.png",
+					picture = "__gleba-radicane-algaculture__/graphics/terrain/overgrowth-radicane-swamp.png",
 					count = 1,
 					scale = 0.5,
 					size = 1
@@ -91,8 +94,10 @@ data:extend({
 			},
 			transition = tile_graphics.generic_masked_tile_transitions1
 		},
-		-- transitions = {lava_to_out_of_map_transition},
-		-- transitions_between_transitions = data.raw.tile["water"].transitions_between_transitions,
+		transitions = {lava_to_out_of_map_transition},
+		transitions_between_transitions = data.raw.tile["water"].transitions_between_transitions,
+		trigger_effect = tile_trigger_effects.shallow_water_trigger_effect(),
+		
 		walking_sound = tile_sounds.walking.slime,
 		landing_steps_sound = tile_sounds.landing.semi_wet,
 		driving_sound = tile_sounds.driving.wetland,
@@ -102,7 +107,6 @@ data:extend({
 		},
 		walking_speed_modifier = 0.8,
 		vehicle_friction_modifier = 8.0,
-		-- trigger_effect = tile_trigger_effects.shallow_water_trigger_effect(),
 		default_cover_tile = "landfill",
 		fluid = "water",
 		absorptions_per_second = tile_pollution.gleba_water,

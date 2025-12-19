@@ -57,7 +57,7 @@ data:extend({
 		name = "artificial-swamp",
 		icon = "__gleba-radicane-algaculture__/graphics/icons/artificial-swamp.png",
 		subgroup = "terrain",
-		order = "c[landfill]-b[artificial-swamp]",
+		order = "c[landfill]-a[swamp]-a[artificial]",
 		inventory_move_sound = item_sounds.landfill_inventory_move,
 		pick_sound = item_sounds.landfill_inventory_pickup,
 		drop_sound = item_sounds.landfill_inventory_move,
@@ -65,7 +65,9 @@ data:extend({
 		place_as_tile = {
 			result = "artificial-swamp",
 			condition_size = 1,
-			condition = {layers={ground_tile=true}}
+			condition = {layers={ground_tile=true}},
+			invert = true,
+			tile_condition = {"wetland-green-slime"}
 		}
 	},
 	{
@@ -73,7 +75,7 @@ data:extend({
 		name = "overgrowth-radicane-swamp",
 		icon = "__gleba-radicane-algaculture__/graphics/icons/overgrowth-radicane-swamp.png",
 		subgroup = "terrain",
-		order = "c[landfill]-b[overgrowth-radicane-swamp]",
+		order = "c[landfill]-a[swamp]-b[overgrowth]",
 		inventory_move_sound = item_sounds.landfill_inventory_move,
 		pick_sound = item_sounds.landfill_inventory_pickup,
 		drop_sound = item_sounds.landfill_inventory_move,
@@ -81,7 +83,9 @@ data:extend({
 		place_as_tile = {
 			result = "overgrowth-radicane-swamp",
 			condition_size = 1,
-			condition = {layers={ground_tile=true}}
+			condition = {layers={ground_tile=true}},
+			invert = true,
+			tile_condition = {"wetland-green-slime"}
 		}
 	}
 })
