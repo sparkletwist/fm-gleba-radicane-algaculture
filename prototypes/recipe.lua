@@ -3,7 +3,7 @@ data:extend({
 		type = "recipe",
 		name = "water-cane-processing",
 		icon = "__gleba-radicane-algaculture__/graphics/icons/water-cane-processing.png",
-		category = "organic-or-hand-crafting",
+		category = "organic-or-assembling",
 		subgroup = "agriculture-processes",
 		order = "a[seeds]-A[water-cane-procesing]",
 		enabled = false,
@@ -57,6 +57,7 @@ data:extend({
 		energy_required = 2,
 		ingredients = {
 			{type="item", name="landfill", amount=5},
+			{type="item", name="water-cane", amount=2},
 			{type="item", name="nutrients", amount=50},
 			{type="fluid", name="water", amount=500}
 		},
@@ -70,7 +71,7 @@ data:extend({
 			{
 				property = "pressure",
 				min = 1000,
-				max = 2000
+				max = 1000
 			}
 		},
 		enabled = false,
@@ -89,7 +90,7 @@ data:extend({
 		type = "recipe",
 		name = "radicane-processing",
 		icon = "__gleba-radicane-algaculture__/graphics/icons/radicane-processing.png",
-		category = "organic-or-assembling",
+		category = "organic",
 		subgroup = "nauvis-agriculture",
 		order = "a[seeds]-c[radicane]-b[processing]",
 		enabled = false,
