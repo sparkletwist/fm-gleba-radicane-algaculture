@@ -153,3 +153,6 @@ data:extend({
 		}
 	}
 })
+
+table.insert(water_tile_type_names, "artificial-swamp")
+table.insert(water_tile_type_names, "overgrowth-radicane-swamp")

@@ -1,3 +1,6 @@
 if mods["aquilo-seabloom-algaculture"] then
-	table.insert(data.raw["agricultural-tower"]["algacultural-bay"].accepted_seeds, "radicane-seed")
+	local algacultural_bay = data.raw["agricultural-tower"]["algacultural-bay"]
+	if algacultural_bay then
+		table.insert(algacultural_bay.accepted_seeds, "radicane-seed")
+	end
 end

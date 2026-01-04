@@ -43,7 +43,7 @@ data:extend({
 		effects = {
 			{type="unlock-recipe", recipe="radicane-processing"},
 			{type="unlock-recipe", recipe="radicane-decontamination"},
-			{type="unlock-recipe", recipe="pentapod-irradiation"}
+			-- {type="unlock-recipe", recipe="pentapod-irradiation"}
 		},
 		prerequisites = {"water-cane-mutation"},
 		research_trigger = {
@@ -52,3 +52,31 @@ data:extend({
 		}
 	}
 })
+
+if mods["astroponics"] then
+	data:extend({
+		{
+			type = "technology",
+			name = "radicane-astroponics",
+			icon = "__gleba-radicane-algaculture__/graphics/technology/radicane-astroponics.png",
+			icon_size = 256,
+			effects = {
+				{type="unlock-recipe", recipe="radicane-astroponics"}
+			},
+			prerequisites = {"radicane", "astroponics", "advanced-asteroid-processing"},
+			unit = {
+				count = 1000,
+				ingredients = {
+					{"automation-science-pack", 1},
+					{"logistic-science-pack", 1},
+					{"chemical-science-pack", 1},
+					{"production-science-pack", 1},
+					{"utility-science-pack", 1},
+					{"space-science-pack", 1},
+					{"agricultural-science-pack", 1}
+				},
+				time = 60
+			}
+		}
+	})
+end

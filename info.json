@@ -6,6 +6,9 @@
   "version": "0.0.1",
   "factorio_version": "2.0",
   "homepage": "https://github.com/SafTheLamb/fm-gleba-radicane-algaculture",
+  "package": {
+    "ignore": ["thumbnail.af", "**/*.af", "**/*.ase", "**/*.af~lock~", "**/*.pdn"]
+  },
   "dependencies": [
     "base >= 2.0.72",
     "fdsl >= 0.2.4",

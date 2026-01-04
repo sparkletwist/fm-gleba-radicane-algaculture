@@ -1,3 +1,10 @@
+local buffed_wood = false
+if mods["early-agriculture"] then
+	buffed_wood = settings.startup["early-agriculture-buff-tree-plant"].value
+elseif mods["astroponics"] then
+	buffed_wood = settings.startup["astroponics-more-wood"].value
+end
+
 data:extend({
 	{
 		type = "recipe",
@@ -11,8 +18,8 @@ data:extend({
 		energy_required = 1,
 		ingredients = {{type="item", name="water-cane", amount=1}},
 		results = {
-			{type="item", name="wood", amount=1},
-			{type="item", name="nutrients", amount=2}
+			{type="item", name="wood", amount=buffed_wood and 2 or 1},
+			{type="item", name="nutrients", amount=1}
 		},
 		crafting_machine_tint = {
 			primary = {r=0.415, g=0.215, b=0.106, a=1},
@@ -28,16 +35,15 @@ data:extend({
 		order = "a[seeds]-c[radicane]-a[mutation]",
 		enabled = false,
 		allow_productivity = true,
-		energy_required = 6,
+		energy_required = 3,
 		ingredients = {
-			{type="item", name="uranium-235", amount=1, ignored_by_stats=1},
+			{type="item", name="uranium-ore", amount=1},
 			{type="item", name="water-cane", amount=1},
 			{type="item", name="tree-seed", amount=1}
 		},
 		results = {
-			{type="item", name="radicane-seed", amount=1, probability=0.913},
-			{type="item", name="uranium-238", amount=1, ignored_by_stats=1, ignored_by_productivity=1},
-			{type="item", name="spoilage", amount=1, probability=0.087}
+			{type="item", name="radicane-seed", amount=1},
+			{type="item", name="spoilage", amount_min=2, amount_max=4}
 		},
 		main_product = "radicane-seed"
 	},
@@ -90,16 +96,16 @@ data:extend({
 		type = "recipe",
 		name = "radicane-processing",
 		icon = "__gleba-radicane-algaculture__/graphics/icons/radicane-processing.png",
-		category = "organic",
+		category = "organic-or-assembling",
 		subgroup = "nauvis-agriculture",
 		order = "a[seeds]-c[radicane]-b[processing]",
 		enabled = false,
 		allow_productivity = true,
-		energy_required = 1,
+		energy_required = 0.6, -- 4 space gardens -> 1 radicane processing biochamber
 		ingredients = {{type="item", name="radicane", amount=1}},
 		results = {
-			{type="item", name="wood", amount=3},
-			{type="item", name="nutrients", amount=5}
+			{type="item", name="wood", amount=buffed_wood and 4 or 2},
+			{type="item", name="nutrients", amount=3}
 		},
 		crafting_machine_tint = {
 			primary = {r=0.215, g=0.815, b=0.306, a=1},
@@ -115,40 +121,43 @@ data:extend({
 		order = "a[seeds]-c[radicane]-c[decontamination]",
 		enabled = false,
 		allow_productivity = true,
-		energy_required = 4,
+		energy_required = 3,
 		ingredients = {
 			{type="item", name="radicane", amount=1},
-			{type="item", name="nutrients", amount=10},
-			{type="item", name="carbon", amount=2}
+			{type="item", name="nutrients", amount=9}
 		},
 		results = {
 			{type="item", name="water-cane", amount=1},
-			{type="item", name="uranium-ore", amount=4}
+			{type="item", name="uranium-ore", amount=2}
 		}
 	},
-	{
-		type = "recipe",
-		name = "pentapod-irradiation",
-		icon = "__gleba-radicane-algaculture__/graphics/icons/pentapod-irradiation.png",
-		category = "organic",
-		subgroup = "agriculture-products",
-		order = "c[eggs]-b[pentapod-eggs]-b[irradiation]",
-		enabled = false,
-		allow_productivity = true,
-		allow_quality = true,
-		energy_required = 3,
-		ingredients = {
-			{type="item", name="pentapod-egg", amount=1, ignored_by_stats=1},
-			{type="item", name="radicane", amount=10},
-			{type="fluid", name="water", amount=30}
-		},
-		results = {
-			{type="item", name="pentapod-egg", amount=4, percent_spoiled=0.5, ignored_by_stats=1, ignored_by_productivity=1},
-			{type="item", name="uranium-235", amount=1}
-		},
-		crafting_machine_tint = {
-			primary = {r = 45, g = 192, b = 86, a = 1.000},
-			secondary = {r = 75, g = 156, b = 122, a = 1.000},
-		}
-	}
 })
+
+if mods["astroponics"] then
+	data:extend({
+		{
+			type = "recipe",
+			name = "radicane-astroponics",
+			localised_name = {"recipe-name.radicane-astroponics"},
+			icons = {
+				{icon="__gleba-radicane-algaculture__/graphics/icons/radicane.png"},
+				{icon="__astroponics__/graphics/icons/fluid/liquid-fertilizer.png", shift={-8,-8}, scale=0.3}
+			},
+			category = "astroponics",
+			subgroup = "astroponic-processes",
+			order = "b[agriculture]-b[radicane]",
+			energy_required = 6,  -- 4 space gardens -> 1 biochamber
+			enabled = false,
+			auto_recycle = false,
+			allow_productivity = true,
+			ingredients = {
+				{type="fluid", name="liquid-fertilizer", amount=50, ignored_by_stats=50},
+				{type="item", name="radicane-seed", amount=1}
+			},
+			results = {
+				{type="item", name="radicane", amount=5},
+				{type="fluid", name="bioslurry", amount=25, ignored_by_stats=25, ignored_by_productivity=25}
+			}
+		}
+	})
+end

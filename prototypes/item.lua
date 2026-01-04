@@ -22,9 +22,7 @@ data:extend({
 		fuel_value = "2MJ",
 		stack_size = 50,
 		default_import_location = "gleba",
-		weight = 1 * kg,
-		spoil_ticks = 60*minute,
-		spoil_result = "spoilage"
+		weight = 1 * kg
 	},
 	{
 		type = "item",
@@ -67,7 +65,8 @@ data:extend({
 		drop_sound = item_sounds.wood_inventory_move,
 		stack_size = 50,
 		weight = 1 * kg,
-		spoil_ticks = 679500, -- 50% more radiation than fish!
+		-- 
+		spoil_ticks = 6 * minute,
 		spoil_result = "spoilage"
 	},
 	{
@@ -91,7 +90,6 @@ data:extend({
 				"lowland-cream-cauliflower-2",
 				"lowland-dead-skin",
 				"lowland-dead-skin-2",
-				"lowland-cream-red",
 			}
 		}
 	},
@@ -115,29 +113,13 @@ data:extend({
 				"lowland-cream-cauliflower-2",
 				"lowland-dead-skin",
 				"lowland-dead-skin-2",
-				"lowland-cream-red",
 				-- Nauvis
+				"water",
+				"deepwater",
+				"water-green",
+				"deepwater-green",
 				"water-shallow",
 				"water-mud",
-				"grass-1",
-				"grass-2",
-				"grass-3",
-				"grass-4",
-				"dry-dirt",
-				"dirt-1",
-				"dirt-2",
-				"dirt-3",
-				"dirt-4",
-				"dirt-5",
-				"dirt-6",
-				"dirt-7",
-				"sand-1",
-				"sand-2",
-				"sand-3",
-				"red-desert-0",
-				"red-desert-1",
-				"red-desert-2",
-				"red-desert-3",
 				"nuclear-ground",
 			}
 		}

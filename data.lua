@@ -9,4 +9,4 @@ require("prototypes.technology")
 
 require("base-data-updates")
 
-require("prototypes.compat.astroponics")
+require("prototypes.compat.seabloom-algaculture")

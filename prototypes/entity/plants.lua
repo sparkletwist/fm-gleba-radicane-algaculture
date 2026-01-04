@@ -227,13 +227,9 @@ data:extend({
 			tile_restriction = {
 				"wetland-light-dead-skin",
 				"wetland-dead-skin",
-				"wetland-light-green-slime",
-				"wetland-green-slime",
-				"wetland-pink-tentacle",
-				"wetland-red-tentacle",
 				"wetland-blue-slime",
-				"artificial-swamp",
-				"overgrowth-radicane-swamp"}
+				"artificial-swamp"
+			}
 		},
 		map_color = {0.19, 0.39, 0.19, 0.40},
 		agricultural_tower_tint = {
@@ -269,7 +265,7 @@ data:extend({
 		mining_sound = data.raw.tree["water-cane"].mining_sound,
 		mined_sound = data.raw.tree["water-cane"].mined_sound,
 		growth_ticks = 2 * minute,
-		surface_conditions = {{property="pressure", min=1000, max=2000}},
+		-- Radicane has no surface conditions by design, and is limited only by being able to terraform suitable soil
 		harvest_emissions = plant_harvest_emissions,
 		emissions_per_second = plant_emissions,
 		max_health = 10,
@@ -285,8 +281,6 @@ data:extend({
 			tile_restriction = {
 				"wetland-light-dead-skin",
 				"wetland-dead-skin",
-				"wetland-light-green-slime",
-				"wetland-green-slime",
 				"wetland-pink-tentacle",
 				"wetland-red-tentacle",
 				"wetland-blue-slime",
