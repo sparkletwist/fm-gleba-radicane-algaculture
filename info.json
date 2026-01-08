@@ -1,13 +1,13 @@
 {
   "name": "gleba-radicane-algaculture",
   "title": "Radicane Algaculture",
-  "description": "",
+  "description": "Grow water cane on Gleba, then bring it to Nauvis and make something new.",
   "author": "SafTheLamb",
   "version": "0.1.0",
   "factorio_version": "2.0",
   "homepage": "https://github.com/SafTheLamb/fm-gleba-radicane-algaculture",
   "package": {
-    "ignore": ["thumbnail.af", "**/*.af", "**/*.ase", "**/*.af~lock~", "**/*.pdn"]
+    "ignore": ["thumbnail.af", "**/*.af", "**/*.ase", "**/*.af~lock~", "**/*.pdn", "renders/**"]
   },
   "dependencies": [
     "base >= 2.0.72",
