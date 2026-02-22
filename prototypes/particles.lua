@@ -146,4 +146,16 @@ local particles = {
 	},
 }
 
+if mods["Arcanyx"] then
+	table.insert(particles, make_particle{
+		name = "voidicane-branch-particle",
+		life_time = 180,
+		pictures = particle_animations.get_gleba_water_cane_particle_pictures({tint = {0.8, 0.56, 0.74, 1.0}, tint_as_overlay = true, scale = 0.8}),
+		shadows = particle_animations.get_gleba_water_cane_particle_pictures({ tint = shadowtint(), shift = util.by_pixel (1,0), scale = 0.8}),
+		regular_trigger_effect = nil,
+		ended_in_water_trigger_effect = particle_ended_in_water_trigger_effect(),
+		render_layer_when_on_ground = "lower-object-above-shadow"		
+	})
+end
+
 data:extend(particles)

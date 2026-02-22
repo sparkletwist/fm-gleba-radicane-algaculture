@@ -8,6 +8,54 @@ local tile_sounds = require("__space-age__/prototypes/tile/tile-sounds")
 
 local lava_to_out_of_map_transition = space_age_tiles_util.lava_to_out_of_map_transition
 
+local tile_effect = "wetland-blue-slime"
+if settings.startup["radicane-create-tile-effect"].value then
+	tile_effect = "wetland-blue-swamp"
+	data:extend({
+		{
+			type = "tile-effect",
+			name = "wetland-blue-swamp",
+			shader = "water",
+			water = {
+				shader_variation = "wetland-water",
+				lightmap_alpha = 0,
+				textures = {
+					{
+						filename = "__space-age__/graphics/terrain/gleba/watercaustics.png",
+						width = 512,
+						height = 512
+					},
+					{
+						filename = "__gleba-radicane-algaculture__/graphics/terrain/wetland-blue-swamp-shader.png",
+						width = 512 * 4,
+						height = 512 * 2
+					}
+				},
+				texture_variations_columns = 1,
+				texture_variations_rows = 1,
+				secondary_texture_variations_columns = 4,
+				secondary_texture_variations_rows = 2,
+
+
+				animation_speed = 1.5,
+				animation_scale = { 0.8, 0.8 },
+				tick_scale = 6,
+
+				specular_lightness = { 11, 26, 5 },
+				foam_color = { 21, 4, 4 },
+				foam_color_multiplier = 1,
+
+				dark_threshold = { 0.1, 0.1 },
+				reflection_threshold = { 1, 1 },
+				specular_threshold = { 0.19, 0.25 },
+
+				near_zoom = 1 / 16,
+				far_zoom = 1 / 16,
+			}
+		}
+	})
+end
+
 data:extend({
 	{
 		type = "tile",
@@ -19,7 +67,7 @@ data:extend({
 		is_foundation = true,
 		collision_mask = tile_collision_masks.shallow_water(),
 		lowland_fog = true,
-		effect = "wetland-blue-swamp",
+		effect = tile_effect,
 		effect_color = {50,66,66},
 		effect_color_secondary = { 49, 80, 14 },
 		map_color = {35, 35, 63},
@@ -70,7 +118,7 @@ data:extend({
 		is_foundation = true,
 		collision_mask = tile_collision_masks.shallow_water(),
 		lowland_fog = true,
-		effect = "wetland-blue-swamp",
+		effect = tile_effect,
 		effect_color = {50,66,66},
 		effect_color_secondary = { 49, 80, 14 },
 		map_color = {35, 35, 63},
@@ -111,47 +159,6 @@ data:extend({
 		fluid = "water",
 		absorptions_per_second = tile_pollution.gleba_water,
 	},
-	{
-		type = "tile-effect",
-		name = "wetland-blue-swamp",
-		shader = "water",
-		water = {
-			shader_variation = "wetland-water",
-			lightmap_alpha = 0,
-			textures = {
-				{
-					filename = "__space-age__/graphics/terrain/gleba/watercaustics.png",
-					width = 512,
-					height = 512
-				},
-				{
-					filename = "__gleba-radicane-algaculture__/graphics/terrain/wetland-blue-swamp-shader.png",
-					width = 512 * 4,
-					height = 512 * 2
-				}
-			},
-			texture_variations_columns = 1,
-			texture_variations_rows = 1,
-			secondary_texture_variations_columns = 4,
-			secondary_texture_variations_rows = 2,
-
-
-			animation_speed = 1.5,
-			animation_scale = { 0.8, 0.8 },
-			tick_scale = 6,
-
-			specular_lightness = { 11, 26, 5 },
-			foam_color = { 21, 4, 4 },
-			foam_color_multiplier = 1,
-
-			dark_threshold = { 0.1, 0.1 },
-			reflection_threshold = { 1, 1 },
-			specular_threshold = { 0.19, 0.25 },
-
-			near_zoom = 1 / 16,
-			far_zoom = 1 / 16,
-		}
-	}
 })
 
 table.insert(water_tile_type_names, "artificial-swamp")

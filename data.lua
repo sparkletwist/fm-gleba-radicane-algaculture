@@ -10,4 +10,7 @@ require("prototypes.technology")
 
 require("base-data-updates")
 
+require("prototypes.compat.arcanyx")
+require("prototypes.compat.bluetonium_scrap-industry")
 require("prototypes.compat.seabloom-algaculture")
+

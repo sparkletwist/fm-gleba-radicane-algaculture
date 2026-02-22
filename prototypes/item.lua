@@ -66,8 +66,8 @@ data:extend({
 		stack_size = 50,
 		weight = 1 * kg,
 		-- 
-		spoil_ticks = 6 * minute,
-		spoil_result = "spoilage"
+		spoil_ticks = (settings.startup["radicane-spoils"].value and (6 * minute)) or nil,
+		spoil_result = (settings.startup["radicane-spoils"].value and "spoilage") or nil
 	},
 	{
 		type = "item",

@@ -5,6 +5,13 @@ elseif mods["astroponics"] then
 	buffed_wood = settings.startup["astroponics-more-wood"].value
 end
 
+local radicane_centrifuge_tints = {
+	primary = { r = 0.4, g = 0.75, b = 0.22, a = 1.0 },
+	secondary = { r = 0.4, g = 0.75, b = 0.22, a = 1.0 },
+	tertiary = { r = 0.6, g = 0.7, b = 0.3, a = 1.0 },
+	quaternary = { r = 0.5, g = 0.66, b = 0.45, a = 1.0 },
+}
+
 data:extend({
 	{
 		type = "recipe",
@@ -45,8 +52,10 @@ data:extend({
 			{type="item", name="radicane-seed", amount=1},
 			{type="item", name="spoilage", amount_min=2, amount_max=4}
 		},
-		main_product = "radicane-seed"
+		main_product = "radicane-seed",
+		crafting_machine_tint =  radicane_centrifuge_tints
 	},
+	
 	{
 		type = "recipe",
 		name = "artificial-swamp",
@@ -128,8 +137,10 @@ data:extend({
 		},
 		results = {
 			{type="item", name="water-cane", amount=1},
-			{type="item", name="uranium-ore", amount=2}
-		}
+			{type="item", name="uranium-ore", amount = settings.startup["radicane-uranium-yield"].value}
+		},
+		
+		crafting_machine_tint =  radicane_centrifuge_tints
 	},
 })
 
@@ -159,5 +170,5 @@ if mods["astroponics"] then
 				{type="fluid", name="bioslurry", amount=25, ignored_by_stats=25, ignored_by_productivity=25}
 			}
 		}
-	})
+	})	
 end

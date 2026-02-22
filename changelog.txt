@@ -1,7 +1,22 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.1.2
-Date: ????
+Version: 0.2.1
+Date: 2026-02-22
+  Minor Features:
+    - Add radioactive waste when using Bluetonium and Scrappy Industry
+    - Add setting to disable tile-effect creation
+    - Add centrifuge tinting when supported
+---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 2026-02-21
+  Major Features:
+    - Add "voidicane" for Arcanyx
+  Minor Features:
+    - Technology descriptions
+    - Uranium yield can be changed via setting
+    - Radicane spoilage can be toggled via setting
+    - Adding pentapod eggs to productivity modules can be toggled via setting
   Changes:
+    - Wood processing now possible on Gleba
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 2026-01-07

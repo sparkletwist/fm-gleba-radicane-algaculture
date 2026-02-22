@@ -78,5 +78,5 @@ if mods["astroponics"] then
 				time = 60
 			}
 		}
-	})
+	})	
 end

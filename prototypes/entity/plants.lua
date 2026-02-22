@@ -299,5 +299,26 @@ data:extend({
 	}
 })
 
+if mods["Arcanyx"] then
+	radicane_tree_particle_effects.voidicane = {
+		water_cane_top = "voidicane-branch-particle",
+		water_cane = "voidicane-branch-particle"
+	}
+	
+	local vp = util.table.deepcopy(data.raw.plant["radicane-plant"])
+	vp.name = "voidicane-plant"
+	vp.icon = "__gleba-radicane-algaculture__/graphics/icons/voidicane-plant.png"
+	vp.minable.results[1].name = "voidicane"
+	vp.order = "a[tree]-c[gleba]-c[decorative]-a[water-cane]cv"
+	vp.map_color = {0.58, 0.14, 0.6, 0.60}
+	vp.agricultural_tower_tint = {
+		primary = {r=0.24, g=0.125, b=0.6, a=1},
+		secondary = {r=0.44, g=0.24, b=0.66, a=1},
+	}
+	vp.variations = gleba_tree_variations("voidicane", 16, 3, 1, 340, 290, util.by_pixel(30, -28), util.by_pixel(30, -20))
+	
+	data:extend({vp})
+end
+
 -- Update water cane to actually yield water cane
 data.raw.tree["water-cane"].minable.result = "water-cane"
