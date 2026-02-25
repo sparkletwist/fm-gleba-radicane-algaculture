@@ -3,9 +3,8 @@
   "title": "Radicane Algaculture",
   "description": "Grow water cane on Gleba, then bring it to Nauvis and make something new.",
   "author": "SafTheLamb, S6X",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "factorio_version": "2.0",
-  "homepage": "https://github.com/SafTheLamb/fm-gleba-radicane-algaculture",
   "package": {
     "ignore": ["thumbnail.af", "**/*.af", "**/*.ase", "**/*.af~lock~", "**/*.pdn", "renders/**"]
   },
@@ -15,7 +14,7 @@
 	"space-age",
 	"? astroponics >= 1.8.0",
 	"? aquilo-seabloom-algaculture >= 0.4.4",
-	"? Arcanyx >= 0.1.12",
+	"? Arcanyx >= 0.2.0",
 	"(?) PlanetsLib"
   ],
   "space_travel_required": true

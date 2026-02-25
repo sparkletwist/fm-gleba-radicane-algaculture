@@ -22,6 +22,7 @@ data:extend({
 		order = "a[seeds]-A[water-cane-procesing]",
 		enabled = false,
 		allow_productivity = true,
+		allow_decomposition = false,
 		energy_required = 1,
 		ingredients = {{type="item", name="water-cane", amount=1}},
 		results = {
@@ -42,6 +43,7 @@ data:extend({
 		order = "a[seeds]-c[radicane]-a[mutation]",
 		enabled = false,
 		allow_productivity = true,
+		allow_decomposition = false,
 		energy_required = 3,
 		ingredients = {
 			{type="item", name="uranium-ore", amount=1},
@@ -110,6 +112,7 @@ data:extend({
 		order = "a[seeds]-c[radicane]-b[processing]",
 		enabled = false,
 		allow_productivity = true,
+		allow_decomposition = false,
 		energy_required = 0.6, -- 4 space gardens -> 1 radicane processing biochamber
 		ingredients = {{type="item", name="radicane", amount=1}},
 		results = {
@@ -130,6 +133,7 @@ data:extend({
 		order = "a[seeds]-c[radicane]-c[decontamination]",
 		enabled = false,
 		allow_productivity = true,
+		allow_decomposition = false,
 		energy_required = 3,
 		ingredients = {
 			{type="item", name="radicane", amount=1},
@@ -161,6 +165,7 @@ if mods["astroponics"] then
 			enabled = false,
 			auto_recycle = false,
 			allow_productivity = true,
+			allow_decomposition = false,
 			ingredients = {
 				{type="fluid", name="liquid-fertilizer", amount=50, ignored_by_stats=50},
 				{type="item", name="radicane-seed", amount=1}
