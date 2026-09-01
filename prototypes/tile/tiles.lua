@@ -6,7 +6,7 @@ local base_sounds = require("__base__/prototypes/entity/sounds")
 local base_tile_sounds = require("__base__/prototypes/tile/tile-sounds")
 local tile_sounds = require("__space-age__/prototypes/tile/tile-sounds")
 
-local lava_to_out_of_map_transition = space_age_tiles_util.lava_to_out_of_map_transition
+local lava_to_out_of_map_transition = data.raw.tile["lava"].transitions[1]
 
 local tile_effect = "wetland-blue-slime"
 if settings.startup["radicane-create-tile-effect"].value then

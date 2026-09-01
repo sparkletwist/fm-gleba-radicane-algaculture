@@ -17,7 +17,7 @@ data:extend({
 		type = "recipe",
 		name = "water-cane-processing",
 		icon = "__gleba-radicane-algaculture__/graphics/icons/water-cane-processing.png",
-		category = "organic-or-assembling",
+		categories = {"organic", "crafting"},
 		subgroup = "agriculture-processes",
 		order = "a[seeds]-A[water-cane-procesing]",
 		enabled = false,
@@ -38,7 +38,7 @@ data:extend({
 		type = "recipe",
 		name = "radicane-seed",
 		icon = "__gleba-radicane-algaculture__/graphics/icons/radicane-seed.png",
-		category = "centrifuging",
+		categories = {"centrifuging"},
 		subgroup = "nauvis-agriculture",
 		order = "a[seeds]-c[radicane]-a[mutation]",
 		enabled = false,
@@ -61,7 +61,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "artificial-swamp",
-		category = "crafting-with-fluid",
+		categories = {"crafting-with-fluid"},
 		surface_conditions = {
 			{
 				property = "pressure",
@@ -83,7 +83,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "overgrowth-radicane-swamp",
-		category = "crafting-with-fluid",
+		categories = {"crafting-with-fluid"},
 		surface_conditions = {
 			{
 				property = "pressure",
@@ -107,7 +107,7 @@ data:extend({
 		type = "recipe",
 		name = "radicane-processing",
 		icon = "__gleba-radicane-algaculture__/graphics/icons/radicane-processing.png",
-		category = "organic-or-assembling",
+		categories = {"organic", "crafting"},
 		subgroup = "nauvis-agriculture",
 		order = "a[seeds]-c[radicane]-b[processing]",
 		enabled = false,
@@ -128,7 +128,7 @@ data:extend({
 		type = "recipe",
 		name = "radicane-decontamination",
 		icon = "__gleba-radicane-algaculture__/graphics/icons/radicane-decontamination.png",
-		category = "centrifuging",
+		categories = {"centrifuging"},
 		subgroup = "nauvis-agriculture",
 		order = "a[seeds]-c[radicane]-c[decontamination]",
 		enabled = false,
@@ -158,7 +158,7 @@ if mods["astroponics"] then
 				{icon="__gleba-radicane-algaculture__/graphics/icons/radicane.png"},
 				{icon="__astroponics__/graphics/icons/fluid/liquid-fertilizer.png", shift={-8,-8}, scale=0.3}
 			},
-			category = "astroponics",
+			categories = {"astroponics"},
 			subgroup = "astroponic-processes",
 			order = "b[agriculture]-b[radicane]",
 			energy_required = 6,  -- 4 space gardens -> 1 biochamber

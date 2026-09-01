@@ -10,7 +10,7 @@ data:extend({
 		},
 		research_trigger = {
 			type = "mine-entity",
-			entity = "water-cane"
+			entities = {"water-cane"}
 		}
 	},
 	{
@@ -48,7 +48,7 @@ data:extend({
 		prerequisites = {"water-cane-mutation"},
 		research_trigger = {
 			type = "mine-entity",
-			entity = "radicane-plant"
+			entities = {"radicane-plant"}
 		}
 	}
 })
